@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:vercel.com)",
+      "WebFetch(domain:brittanychiang.com)",
+      "WebFetch(domain:samselikoff.com)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\")"
+    ]
+  }
+}
