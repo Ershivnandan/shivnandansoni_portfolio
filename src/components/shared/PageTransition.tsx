@@ -9,30 +9,30 @@ type PageTransitionProps = {
 
 const pageVariants = {
   initial: {
-    opacity: 0,
-    y: 20
+    opacity: 0.8,
+    y: 10,
   },
   in: {
     opacity: 1,
-    y: 0
+    y: 0,
   },
   out: {
-    opacity: 0,
-    y: -20
-  }
+    opacity: 0.8,
+    y: 5,
+  },
 }
 
 const pageTransition = {
   type: 'tween' as const,
   ease: 'easeOut' as const,
-  duration: 0.4
+  duration: 0.2,
 }
 
 export function PageTransition({ children }: PageTransitionProps) {
   const pathname = usePathname()
 
   return (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="sync">
       <motion.div
         key={pathname}
         initial="initial"
@@ -40,7 +40,8 @@ export function PageTransition({ children }: PageTransitionProps) {
         exit="out"
         variants={pageVariants}
         transition={pageTransition}
-        className="min-h-screen"
+        className="min-h-screen w-full"
+        style={{ minHeight: '100vh' }}
       >
         {children}
       </motion.div>

@@ -9,7 +9,7 @@ export function Bio() {
   const profileImageId = process.env.NEXT_PUBLIC_PROFILE_IMAGE_DRIVE_ID
   const profileImageUrl = profileImageId
     ? `https://drive.google.com/uc?export=view&id=${profileImageId}`
-    : "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
+    : 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80'
 
   return (
     <section className="py-8">
@@ -26,7 +26,9 @@ export function Bio() {
               {!imageLoaded && (
                 <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10">
                   <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-primary/60">SS</span>
+                    <span className="text-2xl font-bold text-primary/60">
+                      SS
+                    </span>
                   </div>
                 </div>
               )}
@@ -42,20 +44,19 @@ export function Bio() {
                 placeholder="blur"
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyejN5crVqcvhynVpcog4OabddfIrdu7s/wC7jw=="
                 onError={(e) => {
-                  // Fallback to a professional placeholder if image doesn't load
-                  e.currentTarget.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
-                  setImageLoaded(true) // Show the fallback image
+                  e.currentTarget.src =
+                    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80'
+                  setImageLoaded(true)
                 }}
                 onLoad={() => {
                   setImageLoaded(true)
                 }}
-                style={{
-                  background: 'linear-gradient(135deg, hsl(var(--primary)/0.1), hsl(var(--accent)/0.1))'
-                }}
               />
             </div>
             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground text-2xl font-bold">👋</span>
+              <span className="text-primary-foreground text-2xl font-bold">
+                👋
+              </span>
             </div>
           </div>
         </motion.div>
@@ -74,24 +75,30 @@ export function Bio() {
 
             <div className="space-y-4 text-muted-foreground text-lg">
               <p className="text-pretty">
-                I'm a passionate Software Developer Engineer with 2+ years of experience in building
-                scalable mobile and web applications using React Native, React.js, Node.js, and Python.
-                I have a proven track record of delivering production-ready features including REST APIs,
-                payment integrations, and AI-driven applications.
+                I'm a passionate Software Developer Engineer with 2+ years of
+                experience in building scalable mobile and web applications
+                using React Native, React.js, Node.js, and Python. I have a
+                proven track record of delivering production-ready features
+                including REST APIs, payment integrations, and AI-driven
+                applications.
               </p>
 
               <p className="text-pretty">
-                My expertise spans across full-stack development, performance optimization, and real-time
-                data systems. I specialize in React Native for mobile development, Python for backend
-                services, and modern web technologies. I'm passionate about integrating cutting-edge
-                technologies like AI, IoT, and payment systems to solve real-world problems.
+                My expertise spans across full-stack development, performance
+                optimization, and real-time data systems. I specialize in React
+                Native for mobile development, Python for backend services, and
+                modern web technologies. I'm passionate about integrating
+                cutting-edge technologies like AI, IoT, and payment systems to
+                solve real-world problems.
               </p>
 
               <p className="text-pretty">
-                Currently working at Leher Sustainable Agri, I'm developing applications that help
-                revolutionize agriculture through technology. I love building applications that run
-                offline with AI capabilities, creating seamless payment experiences, and working with
-                cross-functional teams to deliver impactful solutions.
+                Currently working at Leher Sustainable Agri, I'm developing
+                applications that help revolutionize agriculture through
+                technology. I love building applications that run offline with
+                AI capabilities, creating seamless payment experiences, and
+                working with cross-functional teams to deliver impactful
+                solutions.
               </p>
             </div>
           </div>
@@ -101,7 +108,7 @@ export function Bio() {
               'Mobile App Developer',
               'AI Enthusiast',
               'Payment Integration Expert',
-              'Agriculture Tech Innovator'
+              'Agriculture Tech Innovator',
             ].map((trait, index) => (
               <motion.span
                 key={trait}

@@ -63,7 +63,7 @@ export default function RootLayout({
           >
             <ScrollIndicator />
             <Navbar />
-            <main className="flex-1">
+            <main className="flex-1 relative w-full">
               <PageTransition>{children}</PageTransition>
             </main>
             <Footer />
