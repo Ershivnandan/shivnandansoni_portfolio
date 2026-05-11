@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ThemeSwitcher } from './ThemeSwitcher'
+import { usePrefetchProjects } from '@/hooks/useProjects'
 import { NAVIGATION_ITEMS, MOBILE_MENU_ANIMATION } from '@/constants/navigation'
 import { cn } from '@/lib/utils'
 
@@ -15,6 +16,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const pathname = usePathname()
+  const { prefetchProjects } = usePrefetchProjects()
 
   useEffect(() => {
     function handleScroll() {
@@ -72,6 +74,12 @@ export function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  onMouseEnter={() => {
+                    // Prefetch projects when hovering over Projects link
+                    if (item.href === '/projects') {
+                      prefetchProjects()
+                    }
+                  }}
                   className={cn(
                     'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative',
                     isActive(item.href)

@@ -1,12 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ProjectCard } from './ProjectCard'
 import { ProjectFilter } from './ProjectFilter'
-import { getAllProjects, getAllProjectsSync, filterProjectsByCategory } from '@/services/projects'
+import { useProjects } from '@/hooks/useProjects'
+import { filterProjectsByCategory } from '@/services/projects'
 import { PROJECT_CATEGORIES } from '@/constants/projects'
-import type { ProjectFilter as ProjectFilterType, Project } from '@/types/project'
+import type { ProjectFilter as ProjectFilterType } from '@/types/project'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -20,27 +21,9 @@ const containerVariants = {
 
 export function ProjectGrid() {
   const [selectedCategory, setSelectedCategory] = useState<ProjectFilterType>('All')
-  const [projects, setProjects] = useState<Project[]>(getAllProjectsSync())
-  const [loading, setLoading] = useState(true)
+  const { data: projects, isLoading, isError } = useProjects()
 
-  useEffect(() => {
-    async function loadProjects() {
-      try {
-        setLoading(true)
-        const fetchedProjects = await getAllProjects()
-        setProjects(fetchedProjects)
-      } catch (error) {
-        console.error('Error loading projects:', error)
-        // Keep the sync projects as fallback
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    loadProjects()
-  }, [])
-
-  const filteredProjects = filterProjectsByCategory(projects, selectedCategory)
+  const filteredProjects = filterProjectsByCategory(projects || [], selectedCategory)
 
   return (
     <div className="space-y-12">
@@ -79,7 +62,7 @@ export function ProjectGrid() {
         </motion.div>
       </AnimatePresence>
 
-      {loading && (
+      {isLoading && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -92,14 +75,14 @@ export function ProjectGrid() {
         </motion.div>
       )}
 
-      {!loading && filteredProjects.length === 0 && (
+      {!isLoading && filteredProjects.length === 0 && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           className="text-center py-16"
         >
           <p className="text-muted-foreground text-lg">
-            No projects found for the selected category.
+            {isError ? 'Failed to load projects. Please try again.' : 'No projects found for the selected category.'}
           </p>
         </motion.div>
       )}

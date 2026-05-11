@@ -5,6 +5,7 @@ import { Footer } from '@/components/layout/Footer'
 import { ScrollIndicator } from '@/components/home/ScrollIndicator'
 import { Toaster } from '@/components/ui/toaster'
 import { PageTransition } from '@/components/shared/PageTransition'
+import { QueryProvider } from '@/providers/QueryProvider'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -52,21 +53,23 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-background text-foreground antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={true}
-          disableTransitionOnChange={false}
-          themes={['light', 'dark', 'midnight', 'graphite']}
-        >
-          <ScrollIndicator />
-          <Navbar />
-          <main className="flex-1">
-            <PageTransition>{children}</PageTransition>
-          </main>
-          <Footer />
-          <Toaster />
-        </ThemeProvider>
+        <QueryProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={true}
+            disableTransitionOnChange={false}
+            themes={['light', 'dark', 'midnight', 'graphite']}
+          >
+            <ScrollIndicator />
+            <Navbar />
+            <main className="flex-1">
+              <PageTransition>{children}</PageTransition>
+            </main>
+            <Footer />
+            <Toaster />
+          </ThemeProvider>
+        </QueryProvider>
       </body>
     </html>
   )
