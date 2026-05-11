@@ -1,12 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ProjectCard } from './ProjectCard'
 import { ProjectFilter } from './ProjectFilter'
-import { getAllProjects, filterProjectsByCategory } from '@/services/projects'
+import { getAllProjects, getAllProjectsSync, filterProjectsByCategory } from '@/services/projects'
 import { PROJECT_CATEGORIES } from '@/constants/projects'
-import type { ProjectFilter as ProjectFilterType } from '@/types/project'
+import type { ProjectFilter as ProjectFilterType, Project } from '@/types/project'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -20,8 +20,27 @@ const containerVariants = {
 
 export function ProjectGrid() {
   const [selectedCategory, setSelectedCategory] = useState<ProjectFilterType>('All')
-  const allProjects = getAllProjects()
-  const filteredProjects = filterProjectsByCategory(allProjects, selectedCategory)
+  const [projects, setProjects] = useState<Project[]>(getAllProjectsSync())
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function loadProjects() {
+      try {
+        setLoading(true)
+        const fetchedProjects = await getAllProjects()
+        setProjects(fetchedProjects)
+      } catch (error) {
+        console.error('Error loading projects:', error)
+        // Keep the sync projects as fallback
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    loadProjects()
+  }, [])
+
+  const filteredProjects = filterProjectsByCategory(projects, selectedCategory)
 
   return (
     <div className="space-y-12">
@@ -37,7 +56,7 @@ export function ProjectGrid() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
         >
           {filteredProjects.map((project, index) => (
             <motion.div
@@ -52,6 +71,7 @@ export function ProjectGrid() {
                 }
               }}
               exit={{ opacity: 0, y: -20 }}
+              className="h-full"
             >
               <ProjectCard project={project} />
             </motion.div>
@@ -59,7 +79,20 @@ export function ProjectGrid() {
         </motion.div>
       </AnimatePresence>
 
-      {filteredProjects.length === 0 && (
+      {loading && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-center py-16"
+        >
+          <div className="flex flex-col items-center space-y-4">
+            <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
+            <p className="text-muted-foreground">Loading projects from GitHub...</p>
+          </div>
+        </motion.div>
+      )}
+
+      {!loading && filteredProjects.length === 0 && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

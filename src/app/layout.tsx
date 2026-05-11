@@ -3,7 +3,6 @@ import { ThemeProvider } from 'next-themes'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { ScrollIndicator } from '@/components/home/ScrollIndicator'
-import { CustomCursor } from '@/components/shared/CustomCursor'
 import { Toaster } from '@/components/ui/toaster'
 import { PageTransition } from '@/components/shared/PageTransition'
 import './globals.css'
@@ -61,7 +60,6 @@ export default function RootLayout({
           themes={['light', 'dark', 'midnight', 'graphite']}
         >
           <ScrollIndicator />
-          <CustomCursor />
           <Navbar />
           <main className="flex-1">
             <PageTransition>{children}</PageTransition>

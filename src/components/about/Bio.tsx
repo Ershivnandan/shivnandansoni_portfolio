@@ -2,16 +2,18 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { useState } from 'react'
 
 export function Bio() {
+  const [imageLoaded, setImageLoaded] = useState(false)
   const profileImageId = process.env.NEXT_PUBLIC_PROFILE_IMAGE_DRIVE_ID
   const profileImageUrl = profileImageId
     ? `https://drive.google.com/uc?export=view&id=${profileImageId}`
     : "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
 
   return (
-    <section className="py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <section className="py-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -20,16 +22,32 @@ export function Bio() {
           className="relative"
         >
           <div className="relative w-full max-w-md mx-auto lg:mx-0">
-            <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl overflow-hidden">
+            <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl overflow-hidden relative">
+              {!imageLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/10 to-accent/10">
+                  <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
+                    <span className="text-2xl font-bold text-primary/60">SS</span>
+                  </div>
+                </div>
+              )}
               <Image
                 src={profileImageUrl}
                 alt="Shivnandan Soni"
                 width={400}
                 height={400}
-                className="w-full h-full object-cover"
+                className={`w-full h-full object-cover transition-opacity duration-500 ${
+                  imageLoaded ? 'opacity-100' : 'opacity-0'
+                }`}
+                loading="lazy"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyejN5crVqcvhynVpcog4OabddfIrdu7s/wC7jw=="
                 onError={(e) => {
                   // Fallback to a professional placeholder if image doesn't load
                   e.currentTarget.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
+                  setImageLoaded(true) // Show the fallback image
+                }}
+                onLoad={() => {
+                  setImageLoaded(true)
                 }}
                 style={{
                   background: 'linear-gradient(135deg, hsl(var(--primary)/0.1), hsl(var(--accent)/0.1))'
@@ -47,10 +65,10 @@ export function Bio() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="space-y-6"
+          className="space-y-4"
         >
           <div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
               Hi there! I'm Shivnandan Soni
             </h2>
 

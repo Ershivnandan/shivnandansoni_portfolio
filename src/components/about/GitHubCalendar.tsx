@@ -67,6 +67,8 @@ export function GitHubCalendar() {
                   alt="GitHub Contribution Chart"
                   className="w-full rounded-lg"
                   style={{ filter: 'brightness(1.1) contrast(1.1)' }}
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     e.currentTarget.style.display = 'none'
                     const fallback = e.currentTarget.parentElement?.nextElementSibling as HTMLElement

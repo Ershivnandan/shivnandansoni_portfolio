@@ -16,8 +16,8 @@ export default function AboutPage() {
     <div className="min-h-screen pt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionWrapper>
-          <div className="max-w-4xl mx-auto text-center sm:mb-8 mb-16">
-            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 text-balance">
+          <div className="max-w-4xl mx-auto text-center mb-8">
+            <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
               About Me
             </h1>
             <p className="text-xl text-muted-foreground text-pretty">
