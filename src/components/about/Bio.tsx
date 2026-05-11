@@ -4,6 +4,11 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 export function Bio() {
+  const profileImageId = process.env.NEXT_PUBLIC_PROFILE_IMAGE_DRIVE_ID
+  const profileImageUrl = profileImageId
+    ? `https://drive.google.com/uc?export=view&id=${profileImageId}`
+    : "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
+
   return (
     <section className="py-16">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -17,7 +22,7 @@ export function Bio() {
           <div className="relative w-full max-w-md mx-auto lg:mx-0">
             <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl overflow-hidden">
               <Image
-                src="https://drive.google.com/uc?export=view&id=1GyUJ0SkMA5vaGbjXN-tt_MYj1LMJ4ZHd"
+                src={profileImageUrl}
                 alt="Shivnandan Soni"
                 width={400}
                 height={400}
