@@ -51,7 +51,7 @@ export default function ContactPage() {
                     Location
                   </h3>
                   <p className="text-muted-foreground">
-                    Based in Mumbai, India
+                    Based in Gurugram, Haryana, India
                   </p>
                   <p className="text-sm text-muted-foreground">
                     Available for remote work worldwide
@@ -63,7 +63,7 @@ export default function ContactPage() {
                     Response Time
                   </h3>
                   <p className="text-muted-foreground">
-                    I typically respond within 24-48 hours
+                    I typically respond within 12-24 hours
                   </p>
                 </div>
               </div>
