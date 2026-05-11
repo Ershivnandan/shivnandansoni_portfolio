@@ -5,27 +5,27 @@ import { Code, Database, Cloud, Wrench } from 'lucide-react'
 
 const skillCategories = [
   {
-    title: 'Frontend',
+    title: 'Languages & Core',
     icon: Code,
-    skills: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Framer Motion', 'Redux'],
+    skills: ['JavaScript/TypeScript', 'Python', 'HTML/CSS', 'ECMAScript', 'Modern JS'],
     color: 'text-blue-500'
   },
   {
-    title: 'Backend',
+    title: 'Frameworks & Libraries',
     icon: Database,
-    skills: ['Node.js', 'Express.js', 'PostgreSQL', 'MongoDB', 'GraphQL', 'REST APIs', 'Prisma'],
+    skills: ['React Native', 'React.js', 'Node.js', 'Express.js', 'FastAPI', 'Three.js', 'Tailwind CSS'],
     color: 'text-green-500'
   },
   {
-    title: 'Cloud & DevOps',
+    title: 'Mobile & AI',
     icon: Cloud,
-    skills: ['AWS', 'Vercel', 'Docker', 'Kubernetes', 'CI/CD', 'GitHub Actions', 'Terraform'],
+    skills: ['React Native', 'Expo', 'Local LLM', 'Google Gemini API', 'Eleven Labs TTS', 'Native Modules'],
     color: 'text-purple-500'
   },
   {
-    title: 'Tools & Others',
+    title: 'Tools & Services',
     icon: Wrench,
-    skills: ['Git', 'VS Code', 'Figma', 'Jest', 'Cypress', 'Webpack', 'Vite'],
+    skills: ['Git', 'GitHub', 'MongoDB', 'PostgreSQL', 'Postman', 'Google Earth Engine', 'Razorpay', 'Ionic'],
     color: 'text-orange-500'
   }
 ]

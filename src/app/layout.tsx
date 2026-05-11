@@ -9,9 +9,9 @@ import { PageTransition } from '@/components/shared/PageTransition'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Shivnandan Soni - Full-Stack Developer',
-  description: 'Full-stack developer crafting exceptional digital experiences with modern web technologies. Specializing in React, Next.js, TypeScript, and Node.js.',
-  keywords: ['Full-Stack Developer', 'React', 'Next.js', 'TypeScript', 'Node.js', 'JavaScript', 'Web Developer'],
+  title: 'Shivnandan Soni - Software Developer Engineer',
+  description: 'Software Developer Engineer with 2+ years of experience building scalable mobile and web applications using React Native, React.js, Node.js, and Python. Specializing in AI-driven applications and payment integrations.',
+  keywords: ['Software Developer Engineer', 'React Native', 'React.js', 'Node.js', 'Python', 'AI Applications', 'Mobile Developer', 'Payment Integration'],
   authors: [{ name: 'Shivnandan Soni' }],
   icons: {
     icon: '/portfolio.ico',
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://shivnandansoni.dev',
     siteName: 'Shivnandan Soni',
-    title: 'Shivnandan Soni - Full-Stack Developer',
-    description: 'Full-stack developer crafting exceptional digital experiences with modern web technologies.',
+    title: 'Shivnandan Soni - Software Developer Engineer',
+    description: 'Software Developer Engineer with 2+ years of experience building scalable mobile and web applications using React Native, React.js, Node.js, and Python.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shivnandan Soni - Full-Stack Developer',
-    description: 'Full-stack developer crafting exceptional digital experiences with modern web technologies.',
+    title: 'Shivnandan Soni - Software Developer Engineer',
+    description: 'Software Developer Engineer specializing in React Native, Python, and AI-driven applications.',
     creator: '@shivnandansoni',
   },
   robots: {

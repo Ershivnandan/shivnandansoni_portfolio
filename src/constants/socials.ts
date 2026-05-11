@@ -3,9 +3,9 @@ import type { SocialLink } from '@/types/contact'
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     name: 'GitHub',
-    url: 'https://github.com/shivnandansoni',
+    url: 'https://github.com/Ershivnandan',
     icon: 'Github',
-    username: 'shivnandansoni'
+    username: 'Ershivnandan'
   },
   {
     name: 'LinkedIn',
@@ -21,9 +21,9 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     name: 'Email',
-    url: 'mailto:hello@shivnandansoni.dev',
+    url: 'mailto:shivnandansoni64@gmail.com',
     icon: 'Mail',
-    username: 'hello@shivnandansoni.dev'
+    username: 'shivnandansoni64@gmail.com'
   }
 ]
 

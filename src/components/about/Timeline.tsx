@@ -6,39 +6,39 @@ import { Building2, GraduationCap } from 'lucide-react'
 const timelineData = [
   {
     type: 'work',
-    title: 'Senior Full-Stack Developer',
-    company: 'TechCorp Solutions',
-    period: '2023 - Present',
-    description: 'Leading development of enterprise-level applications using React, Node.js, and cloud technologies. Mentoring junior developers and driving technical decisions.',
+    title: 'Software Developer Engineer',
+    company: 'Leher Sustainable Agri Pvt. Ltd.',
+    period: 'January 2025 - Present',
+    description: 'Developing and maintaining React Native applications used by multiple stakeholders in production. Built Python-based backend services for crop stress analysis using Google Earth Engine. Integrated Razorpay payment gateway and secure OTP-based authentication.',
     icon: Building2,
-    skills: ['React', 'Next.js', 'TypeScript', 'AWS', 'GraphQL']
+    skills: ['React Native', 'Python', 'Google Earth Engine', 'Razorpay', 'OTP Auth']
   },
   {
     type: 'work',
-    title: 'Full-Stack Developer',
-    company: 'StartupXYZ',
-    period: '2021 - 2023',
-    description: 'Built and maintained multiple client projects from concept to deployment. Collaborated closely with design and product teams to deliver exceptional user experiences.',
+    title: 'Associate Software Developer',
+    company: 'InGunagya Technologies Pvt. Ltd.',
+    period: 'July 2023 - June 2024',
+    description: 'Developed front-end user interfaces for Wiraa, a freelancing platform. Worked with Ionic framework to enable mobile app connectivity with IoT devices. Collaborated with IoT and backend teams for seamless hardware-software integration.',
     icon: Building2,
-    skills: ['Vue.js', 'Node.js', 'PostgreSQL', 'Docker']
-  },
-  {
-    type: 'work',
-    title: 'Frontend Developer',
-    company: 'WebAgency Pro',
-    period: '2020 - 2021',
-    description: 'Developed responsive web applications and improved website performance. Worked with various CMS platforms and e-commerce solutions.',
-    icon: Building2,
-    skills: ['JavaScript', 'React', 'SCSS', 'WordPress']
+    skills: ['Ionic', 'Frontend Development', 'IoT Integration', 'APIs', 'Real-time Data']
   },
   {
     type: 'education',
-    title: 'Bachelor of Computer Science',
-    company: 'University of Technology',
-    period: '2016 - 2020',
-    description: 'Graduated with honors. Specialized in software engineering and web technologies. Active member of the computer science club.',
+    title: 'BTech in Electronics & Communication Engineering',
+    company: 'Global Engineering College',
+    period: 'August 2019 - May 2023',
+    description: 'Completed Bachelor of Technology in Electronics and Communication Engineering from Jabalpur, Madhya Pradesh. Built strong foundation in engineering principles and technology.',
     icon: GraduationCap,
-    skills: ['Data Structures', 'Algorithms', 'Database Design', 'Software Engineering']
+    skills: ['Electronics', 'Communication Systems', 'Programming', 'Problem Solving']
+  },
+  {
+    type: 'education',
+    title: 'Higher Secondary (PCM)',
+    company: 'Guru Gobind Singh Khalsa Hr. Sec. School',
+    period: 'April 2018 - May 2019',
+    description: 'Completed Higher Secondary education with Physics, Chemistry, and Mathematics from Jabalpur, Madhya Pradesh.',
+    icon: GraduationCap,
+    skills: ['Physics', 'Chemistry', 'Mathematics', 'Analytical Thinking']
   }
 ]
 

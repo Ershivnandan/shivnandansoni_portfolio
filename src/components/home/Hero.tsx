@@ -60,6 +60,23 @@ export function Hero() {
         animate="visible"
       >
         <div className="max-w-4xl mx-auto text-center">
+          {/* Profile Image - Uncomment to use */}
+          {/* <motion.div
+            variants={itemVariants}
+            className="mb-8"
+          >
+            <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-primary/20">
+              <Image
+                src="/images/hero/profile.jpg"
+                alt="Shivnandan Soni"
+                width={128}
+                height={128}
+                className="object-cover"
+                priority
+              />
+            </div>
+          </motion.div> */}
+
           <motion.div
             variants={itemVariants}
             className="mb-6"
@@ -90,8 +107,8 @@ export function Hero() {
             variants={itemVariants}
             className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto text-pretty"
           >
-            I craft exceptional digital experiences with modern web technologies,
-            focusing on performance, accessibility, and user-centered design.
+            Software Developer Engineer with 2+ years of experience building scalable mobile and web applications
+            using React Native, React.js, Node.js, and Python. Specializing in AI-driven applications and payment integrations.
           </motion.p>
 
           <motion.div

@@ -17,11 +17,15 @@ export function Bio() {
           <div className="relative w-full max-w-md mx-auto lg:mx-0">
             <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl overflow-hidden">
               <Image
-                src="/placeholder-profile.jpg"
+                src="https://drive.google.com/uc?export=view&id=1GyUJ0SkMA5vaGbjXN-tt_MYj1LMJ4ZHd"
                 alt="Shivnandan Soni"
                 width={400}
                 height={400}
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  // Fallback to a professional placeholder if image doesn't load
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80"
+                }}
                 style={{
                   background: 'linear-gradient(135deg, hsl(var(--primary)/0.1), hsl(var(--accent)/0.1))'
                 }}
@@ -42,38 +46,39 @@ export function Bio() {
         >
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              Hi there! I'm Shivnandan
+              Hi there! I'm Shivnandan Soni
             </h2>
 
             <div className="space-y-4 text-muted-foreground text-lg">
               <p className="text-pretty">
-                I'm a passionate full-stack developer with over 5 years of experience building
-                scalable web applications. My journey in tech started with a curiosity about
-                how things work behind the screen, and it has evolved into a career focused on
-                creating exceptional digital experiences.
+                I'm a passionate Software Developer Engineer with 2+ years of experience in building
+                scalable mobile and web applications using React Native, React.js, Node.js, and Python.
+                I have a proven track record of delivering production-ready features including REST APIs,
+                payment integrations, and AI-driven applications.
               </p>
 
               <p className="text-pretty">
-                I specialize in modern JavaScript technologies, with expertise in React, Next.js,
-                TypeScript, and Node.js. I believe in writing clean, maintainable code and
-                following best practices that prioritize performance, accessibility, and user experience.
+                My expertise spans across full-stack development, performance optimization, and real-time
+                data systems. I specialize in React Native for mobile development, Python for backend
+                services, and modern web technologies. I'm passionate about integrating cutting-edge
+                technologies like AI, IoT, and payment systems to solve real-world problems.
               </p>
 
               <p className="text-pretty">
-                When I'm not coding, you'll find me contributing to open-source projects,
-                exploring new technologies, or sharing knowledge with the developer community
-                through blog posts and mentoring. I'm always excited to take on new challenges
-                and collaborate with talented teams to build something amazing.
+                Currently working at Leher Sustainable Agri, I'm developing applications that help
+                revolutionize agriculture through technology. I love building applications that run
+                offline with AI capabilities, creating seamless payment experiences, and working with
+                cross-functional teams to deliver impactful solutions.
               </p>
             </div>
           </div>
 
           <div className="flex flex-wrap gap-3">
             {[
-              'Problem Solver',
-              'Team Player',
-              'Continuous Learner',
-              'Open Source Contributor'
+              'Mobile App Developer',
+              'AI Enthusiast',
+              'Payment Integration Expert',
+              'Agriculture Tech Innovator'
             ].map((trait, index) => (
               <motion.span
                 key={trait}
