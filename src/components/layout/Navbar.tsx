@@ -56,10 +56,12 @@ export function Navbar() {
               <div className="w-8 h-8 relative">
                 <Image
                   src="/portfolio.png"
-                  alt="Shivnandan Soni"
-                  width={32}
-                  height={32}
+                  alt="Shivnandan Soni Portfolio"
+                  width={36}
+                  height={36}
                   className="rounded-lg"
+                  priority
+                  unoptimized
                 />
               </div>
               <span className="hidden sm:inline">Shivnandan Soni</span>

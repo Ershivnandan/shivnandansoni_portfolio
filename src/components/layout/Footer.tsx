@@ -27,10 +27,12 @@ export function Footer() {
               <div className="w-8 h-8 relative">
                 <Image
                   src="/portfolio.png"
-                  alt="Shivnandan Soni"
+                  alt="Shivnandan Soni Portfolio"
                   width={32}
                   height={32}
                   className="rounded-lg"
+                  priority
+                  unoptimized
                 />
               </div>
               <span>Shivnandan Soni</span>
