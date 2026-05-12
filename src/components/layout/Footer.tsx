@@ -97,26 +97,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
+        <div className="mt-8 pt-8 border-t border-border flex justify-center items-center">
           <p className="text-muted-foreground text-sm">
             © {currentYear} Shivnandan Soni. All rights reserved.
           </p>
-          <div className="flex items-center space-x-1 text-sm text-muted-foreground">
-            <span>Made with</span>
-            <motion.div
-              animate={{
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              }}
-            >
-              <Heart className="h-4 w-4 text-red-500 fill-current" />
-            </motion.div>
-            <span>and Next.js</span>
-          </div>
         </div>
       </div>
     </footer>
